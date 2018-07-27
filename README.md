@@ -1,2 +1,2 @@
 # REPLACER
-A Python script for inject and spoof HTTP Reponse to victim network
+A Python script for inject and spoof HTTP response to victim network 
