@@ -12,7 +12,7 @@ def process_packet(packet):
         if scapy_packet[scapy.TCP].dport == 80:
             print "[+] Request"
             print scapy_packet.show()
-        elif scapy_packet[scapy.TCP].dport == 80:
+        elif scapy_packet[scapy.TCP].sport == 80:
             print "[+] Response"
             print scapy_packet.show()
 
